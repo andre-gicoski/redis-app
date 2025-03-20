@@ -1,8 +1,8 @@
-from src.models.sqlite.settings.connection import SqliiteCOnnectionHandle
+from src.models.sqlite.settings.connection import SqliteConnectionHandle
 from .products_repository import ProductsRepository
 import pytest
 
-conn_handle = SqliiteCOnnectionHandle()
+conn_handle = SqliteConnectionHandle()
 conn = conn_handle.connect()
 
 @pytest.mark.skip(reason="db interaction")

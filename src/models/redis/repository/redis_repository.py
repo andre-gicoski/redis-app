@@ -26,6 +26,6 @@ class RedisRepository(RedisRepositoryInterface):
     def insert_ex(self, key: str, value: any, ex: int) -> None:
         self.__redis_conn.set(key, value, ex=ex)
 
-    def insert_ex(self, key: str, field: str, value: any, ex: int) -> None:
+    def insert_hash_ex(self, key: str, field: str, value: any, ex: int) -> None:
         self.__redis_conn.hset(key, field, value)
         self.__redis_conn.expire(key, ex)
